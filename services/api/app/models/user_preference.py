@@ -25,6 +25,11 @@ class UserPreference(Base):
         nullable=False,
         server_default=false(),
     )
+    morning_plan_notifications: Mapped[bool] = mapped_column(
+        Boolean(),
+        nullable=False,
+        server_default=text("true"),
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
